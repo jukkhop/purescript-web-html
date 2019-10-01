@@ -72,5 +72,6 @@ import Web.HTML.HTMLVideoElement (HTMLVideoElement) as Exports
 import Web.HTML.Location (Location) as Exports
 import Web.HTML.Navigator (Navigator) as Exports
 import Web.HTML.Window (Window) as Exports
+import Web.Performance (Performance) as Exports
 
 foreign import window :: Effect Window

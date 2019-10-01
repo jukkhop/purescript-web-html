@@ -241,3 +241,9 @@ exports._opener = function(window) {
     return window.opener;
   };
 };
+
+exports._performance = function(window) {
+  return function() {
+    return window.performance;
+  };
+};

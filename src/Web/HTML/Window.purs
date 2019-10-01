@@ -35,6 +35,7 @@ module Web.HTML.Window
   , RequestIdleCallbackId
   , parent
   , opener
+  , performance
   ) where
 
 import Data.Maybe (Maybe)
@@ -48,6 +49,7 @@ import Web.HTML.HTMLDocument (HTMLDocument)
 import Web.HTML.History (History)
 import Web.HTML.Location (Location)
 import Web.HTML.Navigator (Navigator)
+import Web.Performance (Performance)
 import Web.Storage.Storage (Storage)
 
 foreign import data Window :: Type
@@ -159,3 +161,8 @@ foreign import _opener :: Window -> Effect (Nullable Window)
 
 opener :: Window -> Effect (Maybe Window)
 opener window = toMaybe <$> _opener window
+
+foreign import _performance :: Window -> Effect (Nullable Performance)
+
+performance :: Window -> Effect (Maybe Performance)
+performance window = toMaybe <$> _performance window
